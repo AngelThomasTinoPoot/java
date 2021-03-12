@@ -1,0 +1,44 @@
+package javaapplication20;
+
+import java.util.Scanner;
+
+public class Errores {
+    
+public double absoluto (double A, double B){
+        double ea= A - B ;
+        return Math.abs(ea);
+    }
+   
+   
+    public double relativo (double A, double B){
+        double er = ((A - B) / A);
+        return  Math.abs(er);
+    }
+    
+   
+    public double rporcentual (double A, double B){
+        double erp = ((A - B) / A);
+        double erp1=erp*100;
+        return Math.abs(erp1);
+    }
+
+    public static void main(String[] args) {
+        
+        Scanner teclado=new Scanner(System.in);
+        
+        System.out.println("digite el valor real: ");
+        double A = teclado.nextDouble();
+        
+        System.out.println("digite el valor aproximado: ");
+        double B = teclado.nextDouble();
+
+        Errores error=new Errores();
+        
+        System.out.println("el error absoluto es:"+error.absoluto(A,B));
+        System.out.println("el error relativo es:"+error.relativo(A,B));
+        System.out.println("el error relativo porcentual es:"+ error.rporcentual(A,B)+"%");
+
+    }
+    
+}
+ 
